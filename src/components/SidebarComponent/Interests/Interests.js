@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import RenderInterests from "./RenderInterests";
 
 class Interests extends Component {
   constructor(props) {
@@ -28,7 +29,7 @@ class Interests extends Component {
   };
 
   render() {
-    const { interestName, interestList } = this.state;
+    const { ...props } = this.state;
 
     return (
       <>
@@ -42,6 +43,7 @@ class Interests extends Component {
         <button type="button" onClick={this.addInterest}>
           Add Interest
         </button>
+        <RenderInterests {...props} />
       </>
     );
   }
