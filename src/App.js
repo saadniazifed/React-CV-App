@@ -1,6 +1,7 @@
 /* eslint-disable no-useless-constructor */
 import { Component } from "react";
 import "./App.css";
+import Start from "./start";
 
 class App extends Component {
   constructor(props) {
@@ -8,11 +9,7 @@ class App extends Component {
   }
 
   render() {
-    return (
-      <div>
-        <></>
-      </div>
-    );
+    return <Start />;
   }
 }
 export default App;
