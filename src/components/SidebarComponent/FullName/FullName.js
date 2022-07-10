@@ -17,16 +17,12 @@ class FullName extends Component {
 
   render() {
     return (
-      <div>
-        <form>
-          <input
-            name="firstName"
-            value={this.state.fullName}
-            onChange={this.handleName}
-            placeholder="Name"
-          />
-        </form>
-      </div>
+      <input
+        name="firstName"
+        value={this.state.fullName}
+        onChange={this.handleName}
+        placeholder="Name"
+      />
     );
   }
 }
