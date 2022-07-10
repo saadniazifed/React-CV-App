@@ -26,6 +26,19 @@ class Interests extends Component {
       interestList: this.state.interestList.concat(this.state.interestName),
       interestName: { text: "" },
     });
+
+    console.log(this.state.interestList);
+  };
+
+  removeHobby = (index) => {
+    let newArray = this.state.interestList;
+    let pos = newArray.indexOf(index);
+    newArray.splice(pos, 1);
+    this.setState({
+      interestList: newArray,
+    });
+
+    console.log(newArray);
   };
 
   render() {
@@ -43,7 +56,7 @@ class Interests extends Component {
         <button type="button" onClick={this.addInterest}>
           Add Interest
         </button>
-        <RenderInterests {...props} />
+        <RenderInterests {...props} removeHobby={this.removeHobby} />
       </>
     );
   }

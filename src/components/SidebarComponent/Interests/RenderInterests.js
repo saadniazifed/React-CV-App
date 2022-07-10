@@ -1,20 +1,34 @@
 /* eslint-disable no-useless-constructor */
 import React, { Component } from "react";
+import uniqid from "uniqid";
 
 class RenderInterests extends Component {
   constructor(props) {
     super(props);
+
+    // this.state = {
+    //   id: 0,
+    // };
   }
 
   render() {
-    const { interestList } = this.props;
+    const { interestList, removeHobby } = this.props;
 
     return (
-      <ul>
-        {interestList.map((task) => {
-          return <li key={task.id}>{task.text}</li>;
-        })}
-      </ul>
+      <>
+        <ul>
+          {interestList.map((task, index) => {
+            return (
+              <li key={uniqid()}>
+                {task.text}
+                <button type="button" onClick={() => removeHobby(index)}>
+                  Remove Hobby
+                </button>
+              </li>
+            );
+          })}
+        </ul>
+      </>
     );
   }
 }
