@@ -1,0 +1,7 @@
+div > input {
+  margin-top: 1rem;
+}
+
+.name--container > h3 {
+  margin-bottom: -10px;
+}

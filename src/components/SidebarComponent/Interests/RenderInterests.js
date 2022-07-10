@@ -1,5 +1,6 @@
 /* eslint-disable no-useless-constructor */
 import React, { Component } from "react";
+import "./Interests.css";
 import uniqid from "uniqid";
 
 class RenderInterests extends Component {
@@ -15,11 +16,11 @@ class RenderInterests extends Component {
     const { interestList, removeHobby } = this.props;
 
     return (
-      <>
-        <ul>
+      <div className="renderInterest--container">
+        <ul className="interest-and-button">
           {interestList.map((task, index) => {
             return (
-              <li key={uniqid()}>
+              <li key={uniqid()} className="li--container">
                 {task.text}
                 <button type="button" onClick={() => removeHobby(index)}>
                   Remove Hobby
@@ -28,7 +29,7 @@ class RenderInterests extends Component {
             );
           })}
         </ul>
-      </>
+      </div>
     );
   }
 }

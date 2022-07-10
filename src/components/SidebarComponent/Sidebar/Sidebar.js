@@ -13,14 +13,14 @@ class Sidebar extends Component {
 
   render() {
     return (
-      <>
-        <form>
+      <div className="sidebar--container">
+        <form className="form--container">
           <FullName />
           <Contact />
           <Social />
           <Interests />
         </form>
-      </>
+      </div>
     );
   }
 }

@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import RenderInterests from "./RenderInterests";
+import "./Interests.css";
 
 class Interests extends Component {
   constructor(props) {
@@ -45,7 +46,8 @@ class Interests extends Component {
     const { ...props } = this.state;
 
     return (
-      <>
+      <div className="interest--container">
+        <h3>Interests: </h3>
         <label htmlFor="interestInput">Enter Interests</label>
         <input
           type="text"
@@ -57,7 +59,7 @@ class Interests extends Component {
           Add Interest
         </button>
         <RenderInterests {...props} removeHobby={this.removeHobby} />
-      </>
+      </div>
     );
   }
 }

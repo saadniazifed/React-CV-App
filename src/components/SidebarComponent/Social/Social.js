@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import "./Social.css";
 
 class Social extends Component {
   constructor(props) {
@@ -19,7 +20,8 @@ class Social extends Component {
 
   render() {
     return (
-      <>
+      <div className="social--container">
+        <h4>Social: </h4>
         <input
           name="facebook"
           onChange={this.handleChange}
@@ -40,7 +42,7 @@ class Social extends Component {
           value={this.state.instagram}
           placeholder="instagram.com/abcd"
         />
-      </>
+      </div>
     );
   }
 }

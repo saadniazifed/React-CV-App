@@ -1,5 +1,6 @@
 import React, { Component } from "react";
-import Sidebar from "./components/SidebarComponent/Sidebar/Sidebar";
+import Sidebar from "../SidebarComponent/Sidebar/Sidebar";
+import "./Start.css";
 
 class Start extends Component {
   // eslint-disable-next-line no-useless-constructor
@@ -8,7 +9,11 @@ class Start extends Component {
   }
 
   render() {
-    return <Sidebar />;
+    return (
+      <div className="start--container">
+        <Sidebar />
+      </div>
+    );
   }
 }
 

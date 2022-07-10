@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import "./Contact.css";
 
 class Contact extends Component {
   constructor(props) {
@@ -19,7 +20,8 @@ class Contact extends Component {
 
   render() {
     return (
-      <>
+      <div className="contact--container">
+        <h3>Contact: </h3>
         <input
           name="phone"
           value={this.state.phone}
@@ -40,7 +42,7 @@ class Contact extends Component {
           onChange={this.handleChange}
           placeholder="Linkedin.com/abcd"
         />
-      </>
+      </div>
     );
   }
 }

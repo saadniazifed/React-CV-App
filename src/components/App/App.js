@@ -1,7 +1,7 @@
 /* eslint-disable no-useless-constructor */
 import { Component } from "react";
 import "./App.css";
-import Start from "./start";
+import Start from "../Start/Start";
 
 class App extends Component {
   constructor(props) {

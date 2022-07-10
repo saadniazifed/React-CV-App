@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import "./FullName.css";
 
 class FullName extends Component {
   constructor(props) {
@@ -17,12 +18,15 @@ class FullName extends Component {
 
   render() {
     return (
-      <input
-        name="firstName"
-        value={this.state.fullName}
-        onChange={this.handleName}
-        placeholder="Name"
-      />
+      <div className="name--container">
+        <h3>Name: </h3>
+        <input
+          name="fullName"
+          value={this.state.fullName}
+          onChange={this.handleName}
+          placeholder="Name"
+        />
+      </div>
     );
   }
 }

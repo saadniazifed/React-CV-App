@@ -1,0 +1,6 @@
+.start--container {
+  /* This is the width of the entire CV Container */
+  border: 3px solid red;
+  width: 87vw;
+  min-height: 100vh;
+}
