@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import RenderExperience from "./RenderExperience";
+import "./WorkExperience.css";
 
 class WorkExperience extends Component {
   constructor(props) {
@@ -59,51 +60,67 @@ class WorkExperience extends Component {
 
   render() {
     return (
-      <>
+      <div>
         <h3>Work Experience: </h3>
-        <button type="button" onClick={this.showForm}>
-          Show Form
+        <button type="button" onClick={this.showForm} className="projectBtn">
+          Show Work
         </button>
         {this.state.formVisible && (
-          <>
-            <button type="button" onClick={this.addExperience}>
-              Add Experience
-            </button>
-            <label htmlFor="companyName">Enter Company: </label>
+          <div className="form__group field">
             <input
+              placeholder="Previous Experience.."
               type="text"
               name="companyName"
               value={this.state.workExperience.companyName}
               onChange={this.handleChange}
+              className="form__field"
             />
-            <label htmlFor="startDate">Start Date: </label>
+
             <input
               type="date"
               name="startDate"
               value={this.state.workExperience.startDate}
               onChange={this.handleChange}
+              className="form__field"
             />
-            <label htmlFor="endDate">End Date: </label>
+
             <input
               type="date"
               name="endDate"
               value={this.state.workExperience.endDate}
               onChange={this.handleChange}
+              className="form__field"
             />
-            <label htmlFor="description">Description: </label>
+
             <textarea
+              placeholder="Describe Previous Working Experience..."
               value={this.state.workExperience.description}
               onChange={this.handleChange}
               name="description"
+              className="textAreaFormField"
             />
 
-            <button type="button" onClick={this.hideForm}>
-              Hide Form
-            </button>
+            <div className="experienceBtnDiv">
+              <button
+                type="button"
+                onClick={this.addExperience}
+                className="projectBtn"
+              >
+                Add Experience
+              </button>
+
+              <button
+                type="button"
+                onClick={this.hideForm}
+                className="projectBtn"
+              >
+                Hide Form
+              </button>
+            </div>
             <RenderExperience experienceList={this.state.experienceList} />
-          </>
+          </div>
         )}
-      </>
+      </div>
     );
   }
 }
