@@ -6,7 +6,7 @@ class Description extends Component {
     super(props);
 
     this.state = {
-      descriptionValue: "Enter the Description here.",
+      descriptionValue: "",
     };
   }
 
@@ -19,12 +19,12 @@ class Description extends Component {
   render() {
     return (
       <>
-        <label htmlFor="descriptionValue">Description: </label>
         <textarea
           value={this.state.descriptionValue}
           onChange={this.handleDescriptionChange}
           name="descriptionValue"
           className="textarea"
+          placeholder="Enter Description here.."
         />
       </>
     );
