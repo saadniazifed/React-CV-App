@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import RenderEducation from "./RenderEducation";
+import "./Education.css";
 
 class Education extends Component {
   constructor(props) {
@@ -70,57 +71,70 @@ class Education extends Component {
     return (
       <>
         <h3>Education: </h3>
-        <button type="button" onClick={this.showForm}>
+        <button type="button" onClick={this.showForm} className="projectBtn">
           Show Form
         </button>
         {this.state.formVisible && (
-          <>
-            <button type="button" onClick={this.addEducation}>
-              Add Education
-            </button>
-            <label htmlFor="educationLevel">Enter Education Level: </label>
+          <div className="form__group field">
             <input
               placeholder="School/College/University"
               type="text"
               name="educationLevel"
               value={this.state.education.educationLevel}
               onChange={this.handleChange}
+              className="form__field"
             />
 
-            <label htmlFor="name">Enter Education Level: </label>
             <input
               placeholder="Name of University"
               type="text"
               name="name"
               value={this.state.education.name}
               onChange={this.handleChange}
+              className="form__field"
             />
 
-            <label htmlFor="startDate">Start Date: </label>
             <input
               type="date"
               name="startDate"
               value={this.state.education.startDate}
               onChange={this.handleChange}
+              className="form__field"
             />
-            <label htmlFor="endDate">End Date: </label>
+
             <input
               type="date"
               name="endDate"
               value={this.state.education.endDate}
               onChange={this.handleChange}
+              className="form__field"
             />
-            <label htmlFor="description">Description: </label>
+
             <textarea
               value={this.state.education.description}
               onChange={this.handleChange}
               name="description"
+              className="textAreaFormField"
+              placeholder="Any personal, academic or other things you have received during your study.."
             />
+            <div className="projectBtnDiv">
+              <button
+                type="button"
+                onClick={this.addEducation}
+                className="projectBtn"
+              >
+                Add Education
+              </button>
 
-            <button type="button" onClick={this.hideForm}>
-              Hide Form
-            </button>
-          </>
+              <button
+                type="button"
+                onClick={this.hideForm}
+                className="projectBtn"
+              >
+                Hide Form
+              </button>
+            </div>
+          </div>
         )}
         <RenderEducation educationList={educationList} />
       </>
