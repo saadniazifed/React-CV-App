@@ -1,4 +1,5 @@
 .mainContentForm {
   padding: 20px 40px;
-  border: 2px solid darkred;
+  border: 2px solid grey;
+  border-left: none;
 }
