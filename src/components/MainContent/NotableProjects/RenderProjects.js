@@ -14,12 +14,12 @@ class RenderProjects extends Component {
       <>
         {projectList.map((project) => {
           return (
-            <>
-              <p key={uniqid()}>{project.title}</p>
-              <p key={uniqid()}>{project.startDate}</p>
-              <p key={uniqid()}>{project.endDate}</p>
-              <p key={uniqid()}>{project.description}</p>
-            </>
+            <div key={uniqid()}>
+              <p>{project.title}</p>
+              <p>{project.startDate}</p>
+              <p>{project.endDate}</p>
+              <p>{project.description}</p>
+            </div>
           );
         })}
       </>

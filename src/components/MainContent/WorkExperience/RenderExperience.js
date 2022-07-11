@@ -14,12 +14,12 @@ class RenderExperience extends Component {
       <>
         {experienceList.map((projects) => {
           return (
-            <>
-              <p key={uniqid()}>{projects.companyName}</p>
-              <p key={uniqid()}>{projects.startDate}</p>
-              <p key={uniqid()}>{projects.endDate}</p>
-              <p key={uniqid()}>{projects.description}</p>
-            </>
+            <div key={uniqid()}>
+              <p>{projects.companyName}</p>
+              <p>{projects.startDate}</p>
+              <p>{projects.endDate}</p>
+              <p>{projects.description}</p>
+            </div>
           );
         })}
       </>

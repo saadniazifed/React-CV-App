@@ -15,7 +15,7 @@ class RenderSkills extends Component {
         <ul>
           {skillsList.map((task, index) => {
             return (
-              <li key={uniqid()}>
+              <li key={task.text}>
                 {task.text}
                 <button type="button" onClick={() => removeSkills(index)}>
                   Remove Skills
