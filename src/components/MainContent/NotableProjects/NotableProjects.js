@@ -25,6 +25,21 @@ class NotableProjects extends Component {
     });
   };
 
+  addProjects = (e) => {
+    e.preventDefault();
+    this.setState({
+      ...this.projectList,
+      projectList: this.state.projectList.concat(this.state.project),
+
+      project: {
+        title: "",
+        startDate: "",
+        endDate: "",
+        description: "",
+      },
+    });
+  };
+
   render() {
     const { title, startDate, endDate, description, projectList } = this.state;
 
@@ -61,6 +76,10 @@ class NotableProjects extends Component {
           onChange={this.handleChange}
           name="description"
         />
+
+        <button type="button" onClick={this.addProjects}>
+          Add Project
+        </button>
       </>
     );
   }
