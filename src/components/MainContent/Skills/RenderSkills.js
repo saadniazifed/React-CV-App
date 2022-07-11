@@ -12,12 +12,16 @@ class RenderSkills extends Component {
     const { removeSkills, skillsList } = this.props;
     return (
       <>
-        <ul>
+        <ul className="container">
           {skillsList.map((task, index) => {
             return (
-              <li key={task.text}>
+              <li key={task.text} className="column">
                 {task.text}
-                <button type="button" onClick={() => removeSkills(index)}>
+                <button
+                  type="button"
+                  onClick={() => removeSkills(index)}
+                  className="skillsBtn"
+                >
                   Remove Skills
                 </button>
               </li>

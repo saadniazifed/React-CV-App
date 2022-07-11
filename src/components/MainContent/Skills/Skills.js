@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import RenderSkills from "./RenderSkills";
+import "./Skills.css";
 
 class Skills extends Component {
   constructor(props) {
@@ -41,18 +42,24 @@ class Skills extends Component {
     const { ...props } = this.state;
 
     return (
-      <div>
-        <h3>Skills: </h3>
-        <label htmlFor="userSkills">Enter Skills: </label>
-        <input
-          type="text"
-          name="userSkills"
-          value={this.state.userSkills.text}
-          onChange={this.handleChange}
-        />
-        <button type="button" onClick={this.addSkills}>
-          Add Skills
-        </button>
+      <div className="skillCenter">
+        <div className="skillWrapper">
+          <input
+            type="text"
+            name="userSkills"
+            value={this.state.userSkills.text}
+            onChange={this.handleChange}
+            className="form__field"
+            placeholder="Problem Solving..."
+          />
+          <button
+            type="button"
+            onClick={this.addSkills}
+            className="skillsButton"
+          >
+            Add Skills
+          </button>
+        </div>
         <RenderSkills {...props} removeSkills={this.removeSkills} />
       </div>
     );

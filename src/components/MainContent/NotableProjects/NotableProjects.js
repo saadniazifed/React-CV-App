@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import RenderProjects from "./RenderProjects";
+import "./NotableProjects.css";
 
 class NotableProjects extends Component {
   constructor(props) {
@@ -67,14 +68,11 @@ class NotableProjects extends Component {
     return (
       <>
         <h3>Projects: </h3>
-        <button type="button" onClick={this.showForm}>
-          Show Form
+        <button type="button" onClick={this.showForm} className="projectBtn">
+          Show Projects
         </button>
         {this.state.formVisible && (
           <>
-            <button type="button" onClick={this.addProjects}>
-              Add Projects
-            </button>
             <label htmlFor="title">Enter Projects: </label>
             <input
               type="text"
@@ -102,10 +100,22 @@ class NotableProjects extends Component {
               onChange={this.handleChange}
               name="description"
             />
-
-            <button type="button" onClick={this.hideForm}>
-              Hide Form
-            </button>
+            <div className="projectBtnDiv">
+              <button
+                type="button"
+                onClick={this.addProjects}
+                className="projectBtn"
+              >
+                Add Projects
+              </button>
+              <button
+                type="button"
+                onClick={this.hideForm}
+                className="projectBtn"
+              >
+                Hide Form
+              </button>
+            </div>
           </>
         )}
         <RenderProjects projectList={projectList} />
