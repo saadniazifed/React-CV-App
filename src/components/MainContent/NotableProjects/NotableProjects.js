@@ -72,33 +72,38 @@ class NotableProjects extends Component {
           Show Projects
         </button>
         {this.state.formVisible && (
-          <>
-            <label htmlFor="title">Enter Projects: </label>
+          <div className="form__group field">
             <input
               type="text"
               name="title"
               value={this.state.project.title}
               onChange={this.handleChange}
+              className="form__field"
+              placeholder="Project Title"
             />
-            <label htmlFor="startDate">Start Date: </label>
+
             <input
               type="date"
               name="startDate"
               value={this.state.project.startDate}
               onChange={this.handleChange}
+              className="form__field"
             />
-            <label htmlFor="endDate">End Date: </label>
+
             <input
               type="date"
               name="endDate"
               value={this.state.project.endDate}
               onChange={this.handleChange}
+              className="form__field"
             />
-            <label htmlFor="description">Description: </label>
+
             <textarea
               value={this.state.project.description}
               onChange={this.handleChange}
               name="description"
+              className="textAreaFormField"
+              placeholder="Add Project Description..."
             />
             <div className="projectBtnDiv">
               <button
@@ -116,7 +121,7 @@ class NotableProjects extends Component {
                 Hide Form
               </button>
             </div>
-          </>
+          </div>
         )}
         <RenderProjects projectList={projectList} />
       </>
