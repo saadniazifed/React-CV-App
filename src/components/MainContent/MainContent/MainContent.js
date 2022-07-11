@@ -3,6 +3,7 @@ import React, { Component } from "react";
 import Description from "../Description/Description";
 import NotableProjects from "../NotableProjects/NotableProjects";
 import Skills from "../Skills/Skills";
+import WorkExperience from "../WorkExperience/WorkExperience";
 
 class MainContent extends Component {
   constructor(props) {
@@ -15,6 +16,7 @@ class MainContent extends Component {
           <Description />
           <Skills />
           <NotableProjects />
+          <WorkExperience />
         </form>
       </div>
     );
