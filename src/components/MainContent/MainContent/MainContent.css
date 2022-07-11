@@ -2,4 +2,5 @@
   padding: 20px 40px;
   border: 2px solid grey;
   border-left: none;
+  min-height: 100vh;
 }
