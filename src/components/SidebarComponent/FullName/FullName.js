@@ -19,9 +19,6 @@ class FullName extends Component {
   render() {
     return (
       <div className="name--container">
-        <label htmlFor="fullName" className="form__label">
-          Name:
-        </label>
         <div className="form__group field">
           <input
             name="fullName"

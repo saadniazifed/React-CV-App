@@ -5,6 +5,7 @@ import Education from "../Education/Education";
 import NotableProjects from "../NotableProjects/NotableProjects";
 import Skills from "../Skills/Skills";
 import WorkExperience from "../WorkExperience/WorkExperience";
+import "./MainContent.css";
 
 class MainContent extends Component {
   constructor(props) {
@@ -13,7 +14,7 @@ class MainContent extends Component {
   render() {
     return (
       <div>
-        <form>
+        <form className="mainContentForm">
           <Description />
           <Skills />
           <NotableProjects />

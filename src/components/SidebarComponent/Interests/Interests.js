@@ -43,18 +43,24 @@ class Interests extends Component {
 
     return (
       <div className="interest--container">
-        <h3>Interests: </h3>
-        <label htmlFor="interestInput">Enter Interests</label>
-        <input
-          type="text"
-          id="interestInput"
-          value={this.state.interestName.text}
-          onChange={this.handleChange}
-        />
-        <button type="button" onClick={this.addInterest}>
-          Add Interest
-        </button>
-        <RenderInterests {...props} removeHobby={this.removeHobby} />
+        <div className="form__group field interestCenter">
+          <input
+            type="text"
+            id="interestInput"
+            value={this.state.interestName.text}
+            onChange={this.handleChange}
+            className="form__field"
+            placeholder="ReactJS, JavaScript..."
+          />
+          <button
+            type="button"
+            onClick={this.addInterest}
+            className="interestButton"
+          >
+            Add Interest
+          </button>
+          <RenderInterests {...props} removeHobby={this.removeHobby} />
+        </div>
       </div>
     );
   }

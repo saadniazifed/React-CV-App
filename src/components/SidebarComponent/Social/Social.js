@@ -21,33 +21,29 @@ class Social extends Component {
   render() {
     return (
       <div className="social--container">
-        <div className="form__group field">
-          <h4>Social: </h4>
-          <label htmlFor="facebook">Facebook: </label>
+        <div className="form__group field socialCenter">
           <input
             name="facebook"
             onChange={this.handleChange}
             value={this.state.facebook}
             placeholder="fb.com/abcd"
-            className="form__label form__field"
+            className="form__field"
           />
 
-          <label htmlFor="twitter">Twitter: </label>
           <input
             name="twitter"
             onChange={this.handleChange}
             value={this.state.twitter}
+            className="form__field"
             placeholder="twitter.com/abcd"
-            className="form__label form__field"
           />
 
-          <label htmlFor="instagram">Instagram: </label>
           <input
             name="instagram"
             onChange={this.handleChange}
             value={this.state.instagram}
             placeholder="instagram.com/abcd"
-            className="form__label form__field"
+            className="form__field"
           />
         </div>
       </div>

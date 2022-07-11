@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import "./Description.css";
 
 class Description extends Component {
   constructor(props) {
@@ -23,6 +24,7 @@ class Description extends Component {
           value={this.state.descriptionValue}
           onChange={this.handleDescriptionChange}
           name="descriptionValue"
+          className="textarea"
         />
       </>
     );
