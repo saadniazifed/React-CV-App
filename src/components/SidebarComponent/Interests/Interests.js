@@ -27,8 +27,6 @@ class Interests extends Component {
       interestList: this.state.interestList.concat(this.state.interestName),
       interestName: { text: "" },
     });
-
-    console.log(this.state.interestList);
   };
 
   removeHobby = (index) => {
@@ -38,8 +36,6 @@ class Interests extends Component {
     this.setState({
       interestList: newArray,
     });
-
-    console.log(newArray);
   };
 
   render() {

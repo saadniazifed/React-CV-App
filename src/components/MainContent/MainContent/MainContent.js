@@ -1,6 +1,7 @@
 /* eslint-disable no-useless-constructor */
 import React, { Component } from "react";
 import Description from "../Description/Description";
+import Skills from "../Skills/Skills";
 
 class MainContent extends Component {
   constructor(props) {
@@ -11,6 +12,7 @@ class MainContent extends Component {
       <div>
         <form>
           <Description />
+          <Skills />
         </form>
       </div>
     );
