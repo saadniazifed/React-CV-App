@@ -8,11 +8,11 @@ class RenderProjects extends Component {
   }
 
   render() {
-    const { projectList } = this.props;
+    const { projectList, removeProjects } = this.props;
 
     return (
       <>
-        {projectList.map((project) => {
+        {projectList.map((project, index) => {
           return (
             <div key={uniqid()} className="projectDataWrapper">
               <div className="projectTitle">
@@ -34,6 +34,15 @@ class RenderProjects extends Component {
                 <h3>Description: </h3>
                 <p>{project.description}</p>
               </div>
+
+              <button
+                type="button"
+                className="projectBtn"
+                onClick={() => removeProjects(index)}
+              >
+                {" "}
+                Remove Project{" "}
+              </button>
             </div>
           );
         })}

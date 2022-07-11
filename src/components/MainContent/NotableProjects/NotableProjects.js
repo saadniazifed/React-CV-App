@@ -123,7 +123,10 @@ class NotableProjects extends Component {
             </div>
           </div>
         )}
-        <RenderProjects projectList={projectList} />
+        <RenderProjects
+          projectList={projectList}
+          removeProjects={this.removeProjects}
+        />
       </>
     );
   }
