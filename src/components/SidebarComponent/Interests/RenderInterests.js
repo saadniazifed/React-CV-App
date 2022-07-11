@@ -17,12 +17,16 @@ class RenderInterests extends Component {
 
     return (
       <div className="renderInterest--container">
-        <ul className="interest-and-button">
+        <ul className="interest-and-button interestContainer">
           {interestList.map((task, index) => {
             return (
-              <li key={uniqid()} className="li--container">
+              <li key={uniqid()} className="li--container interestColumn ">
                 {task.text}
-                <button type="button" onClick={() => removeHobby(index)}>
+                <button
+                  type="button"
+                  onClick={() => removeHobby(index)}
+                  className="removeHobbyBtn"
+                >
                   Remove Hobby
                 </button>
               </li>

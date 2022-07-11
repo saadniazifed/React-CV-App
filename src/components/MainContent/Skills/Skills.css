@@ -75,12 +75,6 @@
   margin-bottom: 15px;
 }
 
-.skillsBtn {
-  /* display: flex;
-  justify-content: center;
-  align-items: center; */
-}
-
 .skillsBtn:hover {
   box-shadow: 0 0 0 0.15rem #5ceace;
 }

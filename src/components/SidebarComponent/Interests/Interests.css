@@ -107,3 +107,43 @@
 .interestButton:hover {
   box-shadow: 0 0 0 0.15rem #5ceace;
 }
+
+.interestContainer {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  border: 2px solid lightgrey;
+}
+
+.interestColumn {
+  flex: 30%;
+  padding: 10px;
+  margin: 5px;
+  display: flex;
+  gap: 1rem;
+  font-family: "Poppins";
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+}
+
+.removeHobbyBtn {
+  outline: 0;
+  border: none;
+  box-shadow: none;
+  cursor: pointer;
+  font-size: 15px;
+  height: 35px;
+  width: 120px;
+  font-weight: 400;
+  color: #fff;
+  text-align: center;
+  line-height: normal;
+  background: linear-gradient(90deg, #5522fa 0, #0074e4 100%);
+  border-radius: 50px;
+  transition: color 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.removeHobbyBtn:hover {
+  box-shadow: 0 0 0 0.15rem #5ceace;
+}
