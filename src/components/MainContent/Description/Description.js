@@ -9,11 +9,21 @@ class Description extends Component {
     };
   }
 
+  handleDescriptionChange = (event) => {
+    this.setState({
+      [event.target.name]: event.target.value,
+    });
+  };
+
   render() {
     return (
       <>
         <label htmlFor="descriptionValue">Description: </label>
-        <textarea value={this.state.descriptionValue} />
+        <textarea
+          value={this.state.descriptionValue}
+          onChange={this.handleDescriptionChange}
+          name="descriptionValue"
+        />
       </>
     );
   }
