@@ -75,8 +75,8 @@ class Education extends Component {
         </button>
         {this.state.formVisible && (
           <>
-            <button type="button" onClick={this.addProjects}>
-              Add Projects
+            <button type="button" onClick={this.addEducation}>
+              Add Education
             </button>
             <label htmlFor="educationLevel">Enter Education Level: </label>
             <input
