@@ -1,6 +1,7 @@
 /* eslint-disable no-useless-constructor */
 import React, { Component } from "react";
 import Description from "../Description/Description";
+import NotableProjects from "../NotableProjects/NotableProjects";
 import Skills from "../Skills/Skills";
 
 class MainContent extends Component {
@@ -13,6 +14,7 @@ class MainContent extends Component {
         <form>
           <Description />
           <Skills />
+          <NotableProjects />
         </form>
       </div>
     );
