@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import MainContent from "../MainContent/MainContent/MainContent";
 import Sidebar from "../SidebarComponent/Sidebar/Sidebar";
 import "./Start.css";
 
@@ -12,6 +13,7 @@ class Start extends Component {
     return (
       <div className="start--container">
         <Sidebar />
+        <MainContent />
       </div>
     );
   }

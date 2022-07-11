@@ -15,7 +15,6 @@
 }
 
 .li--container {
-  border: 2px solid gold;
   display: flex;
   flex-wrap: wrap;
   width: 200px;
@@ -23,6 +22,5 @@
 }
 
 .renderInterest--container {
-  border: 2px solid blue;
   width: 100%;
 }
