@@ -19,13 +19,18 @@ class FullName extends Component {
   render() {
     return (
       <div className="name--container">
-        <h3>Name: </h3>
-        <input
-          name="fullName"
-          value={this.state.fullName}
-          onChange={this.handleName}
-          placeholder="Name"
-        />
+        <label htmlFor="fullName" className="form__label">
+          Name:
+        </label>
+        <div className="form__group field">
+          <input
+            name="fullName"
+            value={this.state.fullName}
+            onChange={this.handleName}
+            placeholder="Name"
+            className="form__field"
+          />
+        </div>
       </div>
     );
   }

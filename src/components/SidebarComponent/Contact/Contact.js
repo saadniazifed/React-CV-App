@@ -21,27 +21,35 @@ class Contact extends Component {
   render() {
     return (
       <div className="contact--container">
-        <h3>Contact: </h3>
-        <input
-          name="phone"
-          value={this.state.phone}
-          onChange={this.handleChange}
-          placeholder="+1-234-5678"
-        />
+        <div className="form__group field">
+          <h3>Contact: </h3>
+          <label htmlFor="phone">Phone:</label>
+          <input
+            name="phone"
+            value={this.state.phone}
+            onChange={this.handleChange}
+            placeholder="+1-234-5678"
+            className="form__label form__field"
+          />
 
-        <input
-          name="email"
-          value={this.state.email}
-          onChange={this.handleChange}
-          placeholder="example@example.com"
-        />
+          <label htmlFor="email">Email:</label>
+          <input
+            name="email"
+            value={this.state.email}
+            onChange={this.handleChange}
+            placeholder="example@example.com"
+            className="form__label form__field"
+          />
 
-        <input
-          name="linkedIn"
-          value={this.state.linkedIn}
-          onChange={this.handleChange}
-          placeholder="Linkedin.com/abcd"
-        />
+          <label htmlFor="linkedIn">LinkedIn:</label>
+          <input
+            name="linkedIn"
+            value={this.state.linkedIn}
+            onChange={this.handleChange}
+            placeholder="Linkedin.com/abcd"
+            className="form__label form__field"
+          />
+        </div>
       </div>
     );
   }
