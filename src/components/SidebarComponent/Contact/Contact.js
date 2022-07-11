@@ -28,6 +28,7 @@ class Contact extends Component {
             onChange={this.handleChange}
             placeholder="+1-234-5678"
             className="form__field"
+            type="number"
           />
 
           <input

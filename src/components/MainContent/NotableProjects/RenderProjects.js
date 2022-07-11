@@ -40,7 +40,6 @@ class RenderProjects extends Component {
                 className="projectBtn"
                 onClick={() => removeProjects(index)}
               >
-                {" "}
                 Remove Project{" "}
               </button>
             </div>

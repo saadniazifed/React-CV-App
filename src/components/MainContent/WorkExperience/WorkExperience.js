@@ -58,6 +58,15 @@ class WorkExperience extends Component {
     });
   };
 
+  removeExperience = (index) => {
+    let newArray = this.state.experienceList;
+    let pos = newArray.indexOf(index);
+    newArray.splice(pos, 1);
+    this.setState({
+      experienceList: newArray,
+    });
+  };
+
   render() {
     return (
       <div>
@@ -117,7 +126,10 @@ class WorkExperience extends Component {
                 Hide Form
               </button>
             </div>
-            <RenderExperience experienceList={this.state.experienceList} />
+            <RenderExperience
+              experienceList={this.state.experienceList}
+              removeExperience={this.removeExperience}
+            />
           </div>
         )}
       </div>

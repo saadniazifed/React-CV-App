@@ -8,11 +8,11 @@ class RenderExperience extends Component {
   }
 
   render() {
-    const { experienceList } = this.props;
+    const { experienceList, removeExperience } = this.props;
 
     return (
       <>
-        {experienceList.map((projects) => {
+        {experienceList.map((projects, index) => {
           return (
             <div key={uniqid()} className="experienceDataWrapper">
               <div className="previousCompany">
@@ -34,6 +34,14 @@ class RenderExperience extends Component {
                 <h3>Description: </h3>
                 <p>{projects.description}</p>
               </div>
+
+              <button
+                type="button"
+                className="projectBtn"
+                onClick={() => removeExperience(index)}
+              >
+                Remove Work Experience
+              </button>
             </div>
           );
         })}

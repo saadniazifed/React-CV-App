@@ -136,7 +136,10 @@ class Education extends Component {
             </div>
           </div>
         )}
-        <RenderEducation educationList={educationList} />
+        <RenderEducation
+          educationList={educationList}
+          removeEducation={this.removeEducation}
+        />
       </>
     );
   }

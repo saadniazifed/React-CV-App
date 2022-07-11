@@ -8,11 +8,11 @@ class RenderEducation extends Component {
   }
 
   render() {
-    const { educationList } = this.props;
+    const { educationList, removeEducation } = this.props;
 
     return (
       <>
-        {educationList.map((eduProject) => {
+        {educationList.map((eduProject, index) => {
           return (
             <div key={uniqid()} className="educationDataWrapper">
               <div className="educationLevel">
@@ -39,6 +39,14 @@ class RenderEducation extends Component {
                 <h3>Description: </h3>
                 <p>{eduProject.description}</p>
               </div>
+
+              <button
+                type="button"
+                className="projectBtn"
+                onClick={() => removeEducation(index)}
+              >
+                Remove Education
+              </button>
             </div>
           );
         })}
