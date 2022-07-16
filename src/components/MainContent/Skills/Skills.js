@@ -1,69 +1,55 @@
-import React, { Component } from "react";
+import React, { useState } from "react";
 import RenderSkills from "./RenderSkills";
 import "./Skills.css";
 
-class Skills extends Component {
-  constructor(props) {
-    super(props);
+const Skills = () => {
+  const [userSkills, setUserSkills] = useState({ text: "" });
+  const [skillsList, setSkillsList] = useState([]);
 
-    this.state = {
-      userSkills: { text: "" },
-      skillsList: [],
-    };
-  }
-
-  handleChange = (e) => {
-    this.setState({
+  const handleChange = (e) => {
+    setUserSkills({
       userSkills: {
         text: e.target.value,
       },
     });
   };
 
-  addSkills = (e) => {
+  const addSkills = (e) => {
     e.preventDefault();
-    this.setState({
-      ...this.skillsList,
-      skillsList: this.state.skillsList.concat(this.state.userSkills),
+    setSkillsList({
+      ...skillsList,
+      skillsList: skillsList.concat(userSkills),
       userSkills: { text: "" },
     });
   };
 
-  removeSkills = (index) => {
-    let newArray = this.state.skillsList;
+  const removeSkills = (index) => {
+    let newArray = skillsList;
     let pos = newArray.indexOf(index);
     newArray.splice(pos, 1);
-    this.setState({
+    setSkillsList({
       skillsList: newArray,
     });
   };
 
-  render() {
-    const { ...props } = this.state;
-
-    return (
-      <div className="skillCenter">
-        <div className="skillWrapper">
-          <input
-            type="text"
-            name="userSkills"
-            value={this.state.userSkills.text}
-            onChange={this.handleChange}
-            className="form__field"
-            placeholder="Problem Solving..."
-          />
-          <button
-            type="button"
-            onClick={this.addSkills}
-            className="skillsButton"
-          >
-            Add Skills
-          </button>
-        </div>
-        <RenderSkills {...props} removeSkills={this.removeSkills} />
+  return (
+    <div className="skillCenter">
+      <div className="skillWrapper">
+        <input
+          type="text"
+          name="userSkills"
+          value={userSkills.text}
+          onChange={handleChange}
+          className="form__field"
+          placeholder="Problem Solving..."
+        />
+        <button type="button" onClick={addSkills} className="skillsButton">
+          Add Skills
+        </button>
       </div>
-    );
-  }
-}
+      <RenderSkills removeSkills={removeSkills} skillsList={skillsList} />
+    </div>
+  );
+};
 
 export default Skills;

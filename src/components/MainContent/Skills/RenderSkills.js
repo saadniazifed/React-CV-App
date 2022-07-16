@@ -1,36 +1,26 @@
-import React, { Component } from "react";
-import uniqid from "uniqid";
+import React from "react";
 
-// eslint-disable-next-line no-unused-vars
-class RenderSkills extends Component {
-  // eslint-disable-next-line no-useless-constructor
-  constructor(props) {
-    super(props);
-  }
-
-  render() {
-    const { removeSkills, skillsList } = this.props;
-    return (
-      <>
-        <ul className="container">
-          {skillsList.map((task, index) => {
-            return (
-              <li key={task.text} className="column">
-                {task.text}
-                <button
-                  type="button"
-                  onClick={() => removeSkills(index)}
-                  className="skillsBtn"
-                >
-                  Remove Skills
-                </button>
-              </li>
-            );
-          })}
-        </ul>
-      </>
-    );
-  }
-}
+const RenderSkills = (props) => {
+  return (
+    <>
+      <ul className="container">
+        {props.skillsList.map((task, index) => {
+          return (
+            <li key={task.text} className="column">
+              {task.text}
+              <button
+                type="button"
+                onClick={() => props.removeSkills(index)}
+                className="skillsBtn"
+              >
+                Remove Skills
+              </button>
+            </li>
+          );
+        })}
+      </ul>
+    </>
+  );
+};
 
 export default RenderSkills;
