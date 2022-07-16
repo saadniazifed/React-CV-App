@@ -1,34 +1,29 @@
-import React, { Component } from "react";
+import React, { useState } from "react";
 import "./Description.css";
 
-class Description extends Component {
-  constructor(props) {
-    super(props);
+const Description = () => {
+  const [descriptionValue, setDescriptionValue] = useState("");
 
-    this.state = {
-      descriptionValue: "",
-    };
-  }
+  const handleDescriptionChange = (event) => {
+    const { name, value } = event.target;
 
-  handleDescriptionChange = (event) => {
-    this.setState({
-      [event.target.name]: event.target.value,
-    });
+    setDescriptionValue((prevState) => ({
+      ...prevState,
+      [name]: value,
+    }));
   };
 
-  render() {
-    return (
-      <>
-        <textarea
-          value={this.state.descriptionValue}
-          onChange={this.handleDescriptionChange}
-          name="descriptionValue"
-          className="textarea"
-          placeholder="Enter Description here.."
-        />
-      </>
-    );
-  }
-}
+  return (
+    <>
+      <textarea
+        value={descriptionValue}
+        onChange={handleDescriptionChange}
+        name="descriptionValue"
+        className="textarea"
+        placeholder="Enter Description here.."
+      />
+    </>
+  );
+};
 
 export default Description;
