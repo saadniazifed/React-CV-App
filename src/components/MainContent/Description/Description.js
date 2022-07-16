@@ -5,12 +5,9 @@ const Description = () => {
   const [descriptionValue, setDescriptionValue] = useState("");
 
   const handleDescriptionChange = (event) => {
-    const { name, value } = event.target;
+    const { value } = event.target;
 
-    setDescriptionValue((prevState) => ({
-      ...prevState,
-      [name]: value,
-    }));
+    setDescriptionValue(value);
   };
 
   return (
