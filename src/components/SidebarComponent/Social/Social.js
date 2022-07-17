@@ -1,54 +1,49 @@
-import React, { Component } from "react";
+import React, { useState } from "react";
 import "./Social.css";
 
-class Social extends Component {
-  constructor(props) {
-    super(props);
+const Social = () => {
+  const [social, setSocial] = useState({
+    facebook: "",
+    twitter: "",
+    instagram: "",
+  });
 
-    this.state = {
-      facebook: "",
-      twitter: "",
-      instagram: "",
-    };
-  }
-
-  handleChange = (event) => {
-    this.setState({
+  const handleChange = (event) => {
+    setSocial({
+      ...social,
       [event.target.name]: event.target.value,
     });
   };
 
-  render() {
-    return (
-      <div className="social--container">
-        <div className="form__group field socialCenter">
-          <input
-            name="facebook"
-            onChange={this.handleChange}
-            value={this.state.facebook}
-            placeholder="fb.com/abcd"
-            className="form__field"
-          />
+  return (
+    <div className="social--container">
+      <div className="form__group field socialCenter">
+        <input
+          name="facebook"
+          onChange={handleChange}
+          value={social.facebook}
+          placeholder="fb.com/abcd"
+          className="form__field"
+        />
 
-          <input
-            name="twitter"
-            onChange={this.handleChange}
-            value={this.state.twitter}
-            className="form__field"
-            placeholder="twitter.com/abcd"
-          />
+        <input
+          name="twitter"
+          onChange={handleChange}
+          value={social.twitter}
+          className="form__field"
+          placeholder="twitter.com/abcd"
+        />
 
-          <input
-            name="instagram"
-            onChange={this.handleChange}
-            value={this.state.instagram}
-            placeholder="instagram.com/abcd"
-            className="form__field"
-          />
-        </div>
+        <input
+          name="instagram"
+          onChange={handleChange}
+          value={social.instagram}
+          placeholder="instagram.com/abcd"
+          className="form__field"
+        />
       </div>
-    );
-  }
-}
+    </div>
+  );
+};
 
 export default Social;
