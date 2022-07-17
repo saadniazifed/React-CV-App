@@ -11,7 +11,7 @@ const RenderInterests = (props) => {
       <ul className="interest-and-button interestContainer">
         {interestList.map((task, index) => {
           return (
-            <li key={uniqid()} className="li--container interestColumn ">
+            <li key={task.id} className="li--container interestColumn ">
               {task.interestList[index].name}
               <button
                 type="button"
