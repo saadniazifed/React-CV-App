@@ -35,7 +35,7 @@ const Interests = () => {
         <input
           type="text"
           id="interestInput"
-          value={interestName.name}
+          value={interestList.name}
           onChange={handleChange}
           className="form__field"
           placeholder="ReactJS, JavaScript..."
@@ -43,6 +43,7 @@ const Interests = () => {
         <button type="button" onClick={addInterest} className="interestButton">
           Add Interest
         </button>
+
         <RenderInterests
           removeHobby={removeHobby}
           interestList={interestList}

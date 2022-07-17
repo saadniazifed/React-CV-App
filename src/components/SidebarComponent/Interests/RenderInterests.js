@@ -1,7 +1,6 @@
 /* eslint-disable no-useless-constructor */
 import React from "react";
 import "./Interests.css";
-import uniqid from "uniqid";
 
 const RenderInterests = (props) => {
   const { removeHobby, interestList } = props;
@@ -11,7 +10,7 @@ const RenderInterests = (props) => {
       <ul className="interest-and-button interestContainer">
         {interestList.map((task, index) => {
           return (
-            <li key={task.id} className="li--container interestColumn ">
+            <li key={index} className="li--container interestColumn ">
               {task.interestList[index].name}
               <button
                 type="button"
