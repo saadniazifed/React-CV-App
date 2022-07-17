@@ -38,15 +38,11 @@ const NotableProjects = () => {
   };
 
   const showForm = () => {
-    setFormVisible({
-      formVisible: true,
-    });
+    setFormVisible(true);
   };
 
   const hideForm = () => {
-    setFormVisible({
-      formVisible: false,
-    });
+    setFormVisible(false);
   };
 
   return (
