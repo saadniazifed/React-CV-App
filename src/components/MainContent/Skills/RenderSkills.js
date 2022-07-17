@@ -1,16 +1,19 @@
 import React from "react";
+import uniqid from "uniqid";
 
 const RenderSkills = (props) => {
+  const { skillsList, removeSkills } = props;
+
   return (
     <>
       <ul className="container">
-        {props.skillsList.map((task, index) => {
+        {skillsList.map((task, index) => {
           return (
-            <li key={task.text} className="column">
-              {task.text}
+            <li key={uniqid()} className="column">
+              {task.skillsList[index].skills}
               <button
                 type="button"
-                onClick={() => props.removeSkills(index)}
+                onClick={() => removeSkills(index)}
                 className="skillsBtn"
               >
                 Remove Skills
