@@ -14,15 +14,11 @@ const WorkExperience = () => {
   const [formVisible, setFormVisible] = useState(false);
 
   const showForm = () => {
-    setFormVisible({
-      formVisible: true,
-    });
+    setFormVisible(true);
   };
 
   const hideForm = () => {
-    setFormVisible({
-      formVisible: false,
-    });
+    setFormVisible(false);
   };
 
   const addExperience = (e) => {
