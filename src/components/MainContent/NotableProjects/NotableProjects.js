@@ -1,135 +1,110 @@
-import React, { Component } from "react";
+import React, { useState } from "react";
 import RenderProjects from "./RenderProjects";
 import "./NotableProjects.css";
 
-class NotableProjects extends Component {
-  constructor(props) {
-    super(props);
+const NotableProjects = () => {
+  const [project, setProject] = useState({
+    title: "",
+    startDate: "",
+    endDate: "",
+    description: "",
+  });
 
-    this.state = {
-      project: {
-        title: "",
-        startDate: "",
-        endDate: "",
-        description: "",
-      },
+  const [projectList, setProjectList] = useState([]);
+  const [formVisible, setFormVisible] = useState(false);
 
-      projectList: [],
-    };
-  }
-
-  handleChange = (event) => {
-    this.setState({
-      project: {
-        ...this.state.project,
-        [event.target.name]: event.target.value,
-      },
+  const handleChange = (event) => {
+    setProject({
+      ...project,
+      [event.target.name]: event.target.value,
     });
   };
 
-  addProjects = (e) => {
+  const addProjects = (e) => {
     e.preventDefault();
-    this.setState({
-      ...this.projectList,
-      projectList: this.state.projectList.concat(this.state.project),
-
-      project: {
-        title: "",
-        startDate: "",
-        endDate: "",
-        description: "",
+    setProjectList([
+      ...projectList,
+      {
+        projectList: [...projectList, project],
       },
-    });
+    ]);
   };
 
-  removeProjects = (index) => {
-    let newArray = this.state.projectList;
-    let pos = newArray.indexOf(index);
-    newArray.splice(pos, 1);
-    this.setState({
-      projectList: newArray,
-    });
+  const removeProjects = (index) => {
+    setProjectList([
+      ...projectList.slice(0, index),
+      ...projectList.slice(index + 1, projectList.length),
+    ]);
   };
 
-  showForm = () => {
-    this.setState({
+  const showForm = () => {
+    setFormVisible({
       formVisible: true,
     });
   };
 
-  hideForm = () => {
-    this.setState({
+  const hideForm = () => {
+    setFormVisible({
       formVisible: false,
     });
   };
 
-  render() {
-    const { projectList } = this.state;
-    return (
-      <>
-        <h3>Projects: </h3>
-        <button type="button" onClick={this.showForm} className="projectBtn">
-          Show Projects
-        </button>
-        {this.state.formVisible && (
-          <div className="form__group field">
-            <input
-              type="text"
-              name="title"
-              value={this.state.project.title}
-              onChange={this.handleChange}
-              className="form__field"
-              placeholder="Project Title"
-            />
+  return (
+    <>
+      <h3>Projects: </h3>
+      <button type="button" onClick={showForm} className="projectBtn">
+        Show Projects
+      </button>
+      {formVisible && (
+        <div className="form__group field">
+          <input
+            type="text"
+            name="title"
+            value={project.title}
+            onChange={handleChange}
+            className="form__field"
+            placeholder="Project Title"
+          />
 
-            <input
-              type="date"
-              name="startDate"
-              value={this.state.project.startDate}
-              onChange={this.handleChange}
-              className="form__field"
-            />
+          <input
+            type="date"
+            name="startDate"
+            value={project.startDate}
+            onChange={handleChange}
+            className="form__field"
+          />
 
-            <input
-              type="date"
-              name="endDate"
-              value={this.state.project.endDate}
-              onChange={this.handleChange}
-              className="form__field"
-            />
+          <input
+            type="date"
+            name="endDate"
+            value={project.endDate}
+            onChange={handleChange}
+            className="form__field"
+          />
 
-            <textarea
-              value={this.state.project.description}
-              onChange={this.handleChange}
-              name="description"
-              className="textAreaFormField"
-              placeholder="Add Project Description..."
-            />
-            <div className="projectBtnDiv">
-              <button
-                type="button"
-                onClick={this.addProjects}
-                className="projectBtn"
-              >
-                Add Projects
-              </button>
-              <button
-                type="button"
-                onClick={this.hideForm}
-                className="projectBtn"
-              >
-                Hide Form
-              </button>
-            </div>
+          <textarea
+            value={project.description}
+            onChange={handleChange}
+            name="description"
+            className="textAreaFormField"
+            placeholder="Add Project Description..."
+          />
+          <div className="projectBtnDiv">
+            <button type="button" onClick={addProjects} className="projectBtn">
+              Add Projects
+            </button>
+            <button type="button" onClick={hideForm} className="projectBtn">
+              Hide Form
+            </button>
           </div>
-        )}
-        <RenderProjects
-          projectList={projectList}
-          removeProjects={this.removeProjects}
-        />
-      </>
-    );
-  }
-}
+        </div>
+      )}
+      <RenderProjects
+        projectList={projectList}
+        removeProjects={removeProjects}
+      />
+    </>
+  );
+};
 
 export default NotableProjects;

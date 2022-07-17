@@ -18,8 +18,6 @@ const Skills = () => {
         skillsList: [...skillsList, userSkills],
       },
     ]);
-
-    console.log(skillsList);
   };
 
   const removeSkills = (index) => {
