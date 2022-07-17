@@ -1,36 +1,26 @@
-import React, { Component } from "react";
+import React, { useState } from "react";
 import "./FullName.css";
 
-class FullName extends Component {
-  constructor(props) {
-    super(props);
+const FullName = () => {
+  const [fullName, setFullName] = useState("");
 
-    this.state = {
-      fullName: "",
-    };
-  }
-
-  handleName = (event) => {
-    this.setState({
-      [event.target.name]: event.target.value,
-    });
+  const handleName = (event) => {
+    setFullName(event.target.value);
   };
 
-  render() {
-    return (
-      <div className="name--container">
-        <div className="form__group field">
-          <input
-            name="fullName"
-            value={this.state.fullName}
-            onChange={this.handleName}
-            placeholder="Name"
-            className="form__field"
-          />
-        </div>
+  return (
+    <div className="name--container">
+      <div className="form__group field">
+        <input
+          name="fullName"
+          value={fullName}
+          onChange={handleName}
+          placeholder="Name"
+          className="form__field"
+        />
       </div>
-    );
-  }
-}
+    </div>
+  );
+};
 
 export default FullName;
