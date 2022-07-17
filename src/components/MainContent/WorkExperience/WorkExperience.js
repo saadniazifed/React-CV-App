@@ -1,140 +1,116 @@
-import React, { Component } from "react";
+import React, { useState } from "react";
 import RenderExperience from "./RenderExperience";
 import "./WorkExperience.css";
 
-class WorkExperience extends Component {
-  constructor(props) {
-    super(props);
+const WorkExperience = () => {
+  const [workExperience, setWorkExperience] = useState({
+    companyName: "",
+    startDate: "",
+    endDate: "",
+    description: "",
+  });
 
-    this.state = {
-      workExperience: {
-        companyName: "",
-        startDate: "",
-        endDate: "",
-        description: "",
-      },
+  const [experienceList, setExperienceList] = useState([]);
+  const [formVisible, setFormVisible] = useState(false);
 
-      experienceList: [],
-
-      formVisible: false,
-    };
-  }
-
-  showForm = () => {
-    this.setState({
+  const showForm = () => {
+    setFormVisible({
       formVisible: true,
     });
   };
 
-  addExperience = (e) => {
-    e.preventDefault();
-    this.setState({
-      ...this.experienceList,
-      experienceList: this.state.experienceList.concat(
-        this.state.workExperience
-      ),
-
-      workExperience: {
-        companyName: "",
-        startDate: "",
-        endDate: "",
-        description: "",
-      },
-    });
-  };
-
-  handleChange = (event) => {
-    this.setState({
-      workExperience: {
-        ...this.state.workExperience,
-        [event.target.name]: event.target.value,
-      },
-    });
-  };
-
-  hideForm = () => {
-    this.setState({
+  const hideForm = () => {
+    setFormVisible({
       formVisible: false,
     });
   };
 
-  removeExperience = (index) => {
-    let newArray = this.state.experienceList;
-    let pos = newArray.indexOf(index);
-    newArray.splice(pos, 1);
-    this.setState({
-      experienceList: newArray,
+  const addExperience = (e) => {
+    e.preventDefault();
+    setExperienceList([
+      ...experienceList,
+      {
+        experienceList: [...experienceList, workExperience],
+      },
+    ]);
+  };
+
+  const handleChange = (event) => {
+    setWorkExperience({
+      ...workExperience,
+      [event.target.name]: event.target.value,
     });
   };
 
-  render() {
-    return (
-      <div>
-        <h3>Work Experience: </h3>
-        <button type="button" onClick={this.showForm} className="projectBtn">
-          Show Work
-        </button>
-        {this.state.formVisible && (
-          <div className="form__group field">
-            <input
-              placeholder="Previous Experience.."
-              type="text"
-              name="companyName"
-              value={this.state.workExperience.companyName}
-              onChange={this.handleChange}
-              className="form__field"
-            />
+  const removeExperience = (index) => {
+    setExperienceList([
+      ...experienceList.slice(0, index),
+      ...experienceList.slice(index + 1, experienceList.length),
+    ]);
+  };
 
-            <input
-              type="date"
-              name="startDate"
-              value={this.state.workExperience.startDate}
-              onChange={this.handleChange}
-              className="form__field"
-            />
+  return (
+    <div>
+      <h3>Work Experience: </h3>
+      <button type="button" onClick={showForm} className="projectBtn">
+        Show Work
+      </button>
+      {formVisible && (
+        <div className="form__group field">
+          <input
+            placeholder="Previous Experience.."
+            type="text"
+            name="companyName"
+            value={workExperience.companyName}
+            onChange={handleChange}
+            className="form__field"
+          />
 
-            <input
-              type="date"
-              name="endDate"
-              value={this.state.workExperience.endDate}
-              onChange={this.handleChange}
-              className="form__field"
-            />
+          <input
+            type="date"
+            name="startDate"
+            value={workExperience.startDate}
+            onChange={handleChange}
+            className="form__field"
+          />
 
-            <textarea
-              placeholder="Describe Previous Working Experience..."
-              value={this.state.workExperience.description}
-              onChange={this.handleChange}
-              name="description"
-              className="textAreaFormField"
-            />
+          <input
+            type="date"
+            name="endDate"
+            value={workExperience.endDate}
+            onChange={handleChange}
+            className="form__field"
+          />
 
-            <div className="experienceBtnDiv">
-              <button
-                type="button"
-                onClick={this.addExperience}
-                className="projectBtn"
-              >
-                Add Experience
-              </button>
+          <textarea
+            placeholder="Describe Previous Working Experience..."
+            value={workExperience.description}
+            onChange={handleChange}
+            name="description"
+            className="textAreaFormField"
+          />
 
-              <button
-                type="button"
-                onClick={this.hideForm}
-                className="projectBtn"
-              >
-                Hide Form
-              </button>
-            </div>
-            <RenderExperience
-              experienceList={this.state.experienceList}
-              removeExperience={this.removeExperience}
-            />
+          <div className="experienceBtnDiv">
+            <button
+              type="button"
+              onClick={addExperience}
+              className="projectBtn"
+            >
+              Add Experience
+            </button>
+
+            <button type="button" onClick={hideForm} className="projectBtn">
+              Hide Form
+            </button>
           </div>
-        )}
-      </div>
-    );
-  }
-}
+          <RenderExperience
+            experienceList={experienceList}
+            removeExperience={removeExperience}
+          />
+        </div>
+      )}
+    </div>
+  );
+};
 
 export default WorkExperience;
