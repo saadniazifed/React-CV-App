@@ -17,8 +17,12 @@ Use it Live in the browser [Here](https://saadniazifed.github.io/React-CV-App/)
 * Use of useState hook extensively is done.
 
 ## Possible future additions
+* Add a preview state to the CV as the user is adding his/her information.
+* Generate a PDF of the CV once the user has finished adding all the information.
+* Create functionality to remove and/or edit inputted data.
 
-None that I can find. Project is completed as it is.
+## Areas for Improvement
+1. Thus far has only been formatted to display effectively on a 13" macbook air.
 
 ## Known Bugs
 None. Everything was fixed before deployment.
